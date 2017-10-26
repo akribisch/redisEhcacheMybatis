@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.web.dao.BankDao">
+
+	<cache type="com.web.until.MybatisCache" />
+	
+	<!-- 添加 -->
+	<insert id="insert" parameterType="Bank">
+		insert into bank(bankname) values(#{bankName})
+	</insert>
+	
+	<!-- 删除 -->
+	<delete id="deleteById" parameterType="int">
+		delete from bank where bankid = #{bankId}
+	</delete>
+	
+	<!-- 修改 -->
+	<update id="updateById" parameterType="Bank">
+		update bank
+		set bankname = #{bankName}
+		where bankid = #{bankId}
+	</update>
+	
+	
+	
+	<!-- 分页查询的总条目数  -->
+	<select id="selectCount" resultType="int">
+		select count(bankid)
+		from bank
+	</select>
+	
+	<!-- 根据主键查询  -->
+	<select id="selectById" parameterType="int" resultType="Bank">
+		select bankid,bankname
+		from bank
+		where bankid = #{bankId}
+	</select>
+	
+	<!-- 全查询  -->
+	<select id="selectAll" resultType="Bank">
+		select bankid,bankname
+		from bank
+	</select>
+</mapper>
