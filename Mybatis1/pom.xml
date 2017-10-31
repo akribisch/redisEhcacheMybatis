@@ -19,7 +19,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
   	 <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.11</version>
+            <version>4.12</version>
             <!-- 表示开发的时候引入，发布的时候不会加载此包 -->
             <scope>test</scope>
         </dependency>
@@ -69,6 +69,14 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
             <version>${spring.version}</version>
         </dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-test</artifactId>
+		    <version>${spring.version}</version>
+		    <scope>test</scope>
+		</dependency>
+		
         <!-- mybatis核心包 -->
         <dependency>
             <groupId>org.mybatis</groupId>
@@ -184,13 +192,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 		    <artifactId>mybatis-ehcache</artifactId>
 		    <version>1.0.0</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
-		<dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-test</artifactId>
-		    <version>2.5</version>
-		    <scope>test</scope>
-		</dependency>
+		
 		
 		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-nop -->
 		<dependency>
@@ -198,6 +200,11 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 		    <artifactId>slf4j-simple</artifactId>
 		    <version>1.7.25</version>
 		</dependency>
-		
+		<dependency>
+		     <groupId>org.mockito</groupId>
+		     <artifactId>mockito-core</artifactId>
+		     <version>1.9.5</version>
+		     <scope>test</scope>
+		 </dependency>
   </dependencies>
 </project>
